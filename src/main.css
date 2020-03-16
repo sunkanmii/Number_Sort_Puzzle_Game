@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 4rem auto 4rem;
+    grid-template-rows: 4rem auto 4rem;
+    width: 100%;
+    align-items: center;
+    height: 44rem;
+}
+
+main{
+    width: 100%;
+    grid-area: 2 / 2 / 3 / 3;
+    align-self: stretch;
+    justify-self: center;
+}
+
+.game-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+    justify-self: center;
+}
+
+.game-container span{
+    width: 10%;
+}
+.game-container span:nth-child(4n){
+    width: 70%;
+}
