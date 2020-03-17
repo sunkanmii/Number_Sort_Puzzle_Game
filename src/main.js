@@ -18,7 +18,7 @@ class App{
         const stylesheet = document.styleSheets[0];
         
         document.onkeydown = (event) => {
-            if(gameSec.children[this.default + 1] != null && gameSec.children[this.default].style.width != "70%" && event.keyCode === 37){
+            if(gameSec.children[this.default + 1] != null && gameSec.children[this.default].hasAttribute("title") === false && event.keyCode === 37){
                 
                     gameSec.children[this.default].removeAttribute("id");
                     this.default++;
@@ -39,7 +39,7 @@ class App{
                 gameSec.children[this.default].textContent = '';
                 gameSec.children[this.default].setAttribute("id", "space");
             }
-            else if(gameSec.children[this.default - 1] != null && gameSec.children[this.default - 1].style.width != "70%" && event.keyCode === 39){
+            else if(gameSec.children[this.default - 1] != null && gameSec.children[this.default - 1].hasAttribute("title") === false && event.keyCode === 39){
                 gameSec.children[this.default].removeAttribute("id");
                 this.default-=1;
                 
@@ -69,7 +69,7 @@ class App{
         const gameSecChildren = document.querySelector(".game-container").children;
 
         for(let i = 3; i < gameSecChildren.length; i+=4){
-            gameSecChildren[i].style.setProperty("width", "70%");
+            gameSecChildren[i].setAttribute("title", "");
         }
     }
 
