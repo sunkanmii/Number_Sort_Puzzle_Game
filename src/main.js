@@ -85,7 +85,7 @@ class App{
             }
             else if(Number(gameSec.children[i].textContent) === gameSec.children.length - 1){
                 youWin.style.display = "inline-block";
-                youWin.textContent = "You win";
+                youWin.textContent = "You win!";
             }
         }
     }

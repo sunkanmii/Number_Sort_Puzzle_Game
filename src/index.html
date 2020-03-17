@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='home.css'>
 </head>
 <body>
     <header>
@@ -13,11 +13,25 @@
     </header>
 
     <main>
-        <section>
+        <section class="main-sec">
+            <button>
+                <a href="./game.html">
+                New game
+                </a>
+            </button>
+            <button>
+                <a href="">
+                Exit
+            </a>
+            </button>
         </section>
-
-        <section>
-
+        <section id="amount" style="display: none">
+            <label for="row-by-column">Row by column:</label>
+            <select name="Row by column" id="row-by-column">
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
         </section>
     </main>
 
