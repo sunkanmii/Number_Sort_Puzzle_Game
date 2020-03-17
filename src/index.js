@@ -1,1 +1,0 @@
-exports.val = document.querySelector("#row-by-column");
