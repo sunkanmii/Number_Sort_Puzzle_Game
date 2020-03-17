@@ -71,7 +71,9 @@ main button:active{
 }
 main img{
     width: 60%;
-    height: auto;  
+    margin-top: 1rem;
+    justify-self: center;
+    height: auto;
 }
 main > p{
     font-size: 2rem;
