@@ -72,15 +72,19 @@ class App {
     checkSorted() {
         const gameSec = document.querySelector(".game-container");
         const youWin = document.querySelector("#you-win");
+        const youWinImg = document.querySelector("main img");
 
         for (let i = 0; i < gameSec.children.length - 1; i++) {
             if (Number(gameSec.children[i].textContent) !== i + 1) {
-                youWin.textContent = "Incorrect puzzle";
+                youWin.textContent = "Incorrect puzzle :(";
                 youWin.style.display = "inline-block";
+                youWin.style.color = "red";
                 break;
             } else if (Number(gameSec.children[i].textContent) === gameSec.children.length - 1) {
                 youWin.style.display = "inline-block";
+                youWin.style.color = "goldenrod";
                 youWin.textContent = "You win!";
+                youWinImg.style.display = "inline-block";
             }
         }
     }

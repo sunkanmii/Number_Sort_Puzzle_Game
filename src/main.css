@@ -69,7 +69,10 @@ main button:hover{
 main button:active{
     background: linear-gradient(to bottom right, rgb(255, 201, 66), #f7f77e);
 }
-
+main img{
+    width: 60%;
+    height: auto;  
+}
 main > p{
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -78,6 +81,7 @@ main > p{
     word-spacing: 0.16;
     color: blueviolet;
 }
+
 p + p{
     margin-top: 2rem;
 }
