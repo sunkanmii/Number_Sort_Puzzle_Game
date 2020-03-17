@@ -7,12 +7,12 @@
 body{
     display: grid;
     grid-template-columns: 4rem auto 4rem;
+    font-family: Arial, Helvetica, sans-serif;
     grid-template-rows: 4rem auto 4rem;
     width: 100%;
     align-items: center;
     background-image: linear-gradient(to bottom right, #f5f044, #ab193b);
     height: 44rem;
-    animation: changeColor;
 }
 
 main{
@@ -80,4 +80,7 @@ main > p{
 }
 p + p{
     margin-top: 2rem;
+}
+footer {
+    grid-area: 3 / 2 / 4 / 4;
 }
