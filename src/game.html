@@ -9,32 +9,29 @@
 </head>
 <body>
     <main>
-        <section class="game-container">
-            <span>2</span>
-            <span>5</span>
-            <span>1</span>
-            <span>4</span>
-            <span>3</span>
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>10</span>
-            <span>12</span>
-            <span>11</span>
-            <span>15</span>
-            <span>13</span>
-            <span>14</span>
-            <span id="space"></span>
+        <section id="amount" style="display: flex">
+            <label for="row-by-column">Row by column:</label>
+            <select name="Row by column" id="row-by-column">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            <button id="okay" onclick="start.generateSpans()">Okay!</button>
         </section>
 
-        <img src="../imgs/youwin.gif" alt="win" style="display:none"/>
-        <p id= "you-win" style="display:none"></p>
+        <article id="mainGame" style="display:none">
+            <section class="game-container" style="display: none">
 
-        <button id="checkBut">Check</button>
+            </section>
+
+            <img src="../imgs/youwin.gif" alt="win" style="display:none"/>
+            <p id = "you-win" style = "display:none"></p>
+
+            <button id="checkBut">Check</button>
+        </article>
     </main>
     
-
     <footer>
         Copyright &copy; Fafowora Olasunkanmi. 
         Front-End Web Developer / Aspiring Software Engineer

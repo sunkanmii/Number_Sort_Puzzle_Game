@@ -25,6 +25,24 @@ main{
     align-items: center;
 }
 
+main #amount {
+    display: grid;
+    grid: 4rem 4rem / 10rem;
+    grid-row-gap: 0.2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 1rem;
+}
+
+main article {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 4rem auto;
+    justify-content: center;
+    min-height: 22rem;
+    align-items: center;
+}
+
 .game-container{
     width: 100%;
     height: auto;
@@ -46,17 +64,20 @@ main{
     margin: 0rem 0rem;
     transition: all 0.4s ease-in-out 0.1s;
 }
+
 .game-container span#space{
     background-color: goldenrod;
 }
+
 main button{
     width: 39%;
-    height: 2rem;
+    height: 3rem;
     justify-self: center;
     border-radius: 6rem;
     color: white;
     font-size: 1rem;
     background: linear-gradient(to bottom right, goldenrod, #d5d50f);
+    width: 14rem;
     border: 2pt outset red;
     box-shadow: 0px 2px 4px grey;
     outline: none;
