@@ -110,7 +110,7 @@ class App {
     iterateProp() {
         const gameSecChildren = document.querySelector(".game-container").children;
 
-        for (let i = 3; i < gameSecChildren.length; i += this.selectedRows) {
+        for (let i = 3; i < gameSecChildren.length; i += 4) {
             gameSecChildren[i].setAttribute("title", "");
         }
     }

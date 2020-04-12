@@ -27,20 +27,38 @@ main{
 
 main #amount {
     display: grid;
-    grid: 4rem 4rem / 10rem;
+    position: relative;
+    grid: auto auto auto/ 16rem;
     grid-row-gap: 0.2rem;
     justify-content: center;
     align-items: center;
     min-height: 1rem;
+    animation: 0.5s linear 0s 1 normal forwards running slide-up;
 }
 
+main #amount button{
+    grid-area: 3 / 1 / 4 /2;
+    height: 2.9rem;
+    width: 12rem;
+}
+
+@keyframes slide-up{
+    0%{
+        top: 20rem;
+    }
+    100%{
+        top: 0%;
+    }
+}
 main article {
     display: grid;
+    position: relative;
     grid-template-columns: 100%;
     grid-template-rows: auto 4rem auto;
     justify-content: center;
     min-height: 22rem;
     align-items: center;
+    animation: 0.5s linear 0s 1 normal forwards running slide-up;
 }
 
 .game-container{
