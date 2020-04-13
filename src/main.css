@@ -25,6 +25,11 @@ main{
     align-items: center;
 }
 
+
+main audio{
+    visibility: none;
+}
+
 main #amount {
     display: grid;
     position: relative;

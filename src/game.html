@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <button onclick="start.playButtonClick()"><a href="index.html">Back</a></button>
+        <button><a href="index.html">Back</a></button>
         <section id="amount" style="display: grid">
             <label for="row-by-column">Row by column:</label>
             <select name="Row by column" id="row-by-column">
@@ -32,7 +32,9 @@
             <button id="checkBut">Check</button>
         </article>
     </main>
-    
+    <audio id="buttonClickSound" preload="auto">
+        <source src="../music/multimedia_button_click_010.mp3" type="audio/mpeg">
+    </audio>
     <footer>
         Copyright &copy; Fafowora Olasunkanmi. 
         Front-End Web Developer / Aspiring Software Engineer

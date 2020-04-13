@@ -9,11 +9,10 @@ class Button
     loader(){
 
     }
-    
+
     playButtonClick(){
         this.buttonClick.play();
     }
 }
-
 const click = new Button();
-click.loader();
+// click.loader();
