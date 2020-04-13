@@ -88,6 +88,24 @@ main article {
     transition: all 0.4s ease-in-out 0.1s;
 }
 
+#you-win{
+    font-size: 2rem;
+    color: red;
+    animation: 1.7s linear 0s infinite normal changeColor;
+}
+
+@keyframes changeColor{
+    0%{
+        color: white;
+    }
+    50%{
+        color: red;
+    }
+    100%{
+        color: white
+    }
+}
+
 .game-container span#space{
     background-color: goldenrod;
 }
