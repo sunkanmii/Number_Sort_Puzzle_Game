@@ -53,3 +53,7 @@ main .main-sec button:hover{
 main .main-sec button:active{
     background: linear-gradient(to bottom right, #fffa6b, #ff577e);
 }
+
+main audio{
+    visibility: none;
+}

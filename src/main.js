@@ -10,6 +10,7 @@ class App {
         this.selectedRows = 0;
         this.numberMax = this.selectedRows ** 2;
         this.gameStartSec = document.querySelector(".game-container");
+        this.clickButtonSound = document.querySelector("main audio");
     }
 
     generateSpans() {
@@ -154,6 +155,10 @@ class App {
         }
 
         return newSet;
+    }
+
+    playClickSound(){
+        
     }
 }
 
