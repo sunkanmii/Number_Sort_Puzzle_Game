@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: grid;
     grid-template-columns: 4rem auto 4rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -15,7 +15,7 @@ body{
     height: 44rem;
 }
 
-main{
+main {
     position: relative;
     z-index: 1;
     width: 100%;
@@ -25,11 +25,14 @@ main{
     align-self: center;
     height: 35rem;
     align-items: center;
+    grid-auto-flow: row;
 }
 
-
-main audio{
+main audio {
     visibility: none;
+}
+
+main #sunk_back {
 }
 
 main #amount {
@@ -43,76 +46,23 @@ main #amount {
     animation: 0.5s linear 0s 1 normal forwards running slide-up;
 }
 
-main #amount button{
+main #amount button {
     grid-area: 3 / 1 / 4 /2;
     height: 2.9rem;
     width: 12rem;
 }
 
-@keyframes slide-up{
-    0%{
+@keyframes slide-up {
+    0% {
         top: 20rem;
     }
-    100%{
+
+    100% {
         top: 0%;
     }
 }
-main article {
-    display: grid;
-    position: relative;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto auto auto;
-    justify-content: center;
-    min-height: 22rem;
-    align-items: center;
-    animation: 0.5s linear 0s 1 normal forwards running slide-up;
-}
 
-.game-container{
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid: 4rem 4rem 4rem 4rem / 4rem 4rem 4rem 4rem;
-    justify-content: center;
-    grid-row-gap: 0rem;
-    margin-top: 0rem;
-}
-.game-container > span{
-    box-shadow: 3px 3px 2px #10101000;
-    width: 100%;
-    height: 4rem;
-    background-color: lightblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 4pt outset #c75d5d;
-    margin: 0rem 0rem;
-    transition: all 0.4s ease-in-out 0.1s;
-}
-
-#you-win{
-    font-size: 2rem;
-    color: red;
-    animation: 1.7s linear 0s infinite normal changeColor;
-}
-
-@keyframes changeColor{
-    0%{
-        color: white;
-    }
-    50%{
-        color: red;
-    }
-    100%{
-        color: white
-    }
-}
-
-.game-container span#space{
-    background-color: goldenrod;
-}
-
-main button{
+main button {
     width: 39%;
     height: 3rem;
     margin: 2rem;
@@ -128,19 +78,81 @@ main button{
     cursor: pointer;
 }
 
-main button:hover{
+main article {
+    display: grid;
+    position: relative;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    justify-content: center;
+    min-height: 22rem;
+    align-items: center;
+    animation: 0.5s linear 0s 1 normal forwards running slide-up;
+}
+
+.game-container {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid: 4rem 4rem 4rem 4rem / 4rem 4rem 4rem 4rem;
+    justify-content: center;
+    grid-row-gap: 0rem;
+    margin-top: 0rem;
+}
+
+.game-container>span {
+    box-shadow: 3px 3px 2px #10101000;
+    width: 100%;
+    height: 4rem;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4pt outset #c75d5d;
+    margin: 0rem 0rem;
+    transition: all 0.4s ease-in-out 0.1s;
+}
+
+#you-win {
+    font-size: 2rem;
+    color: red;
+    animation: 1.7s linear 0s infinite normal changeColor;
+}
+
+@keyframes changeColor {
+    0% {
+        color: white;
+    }
+
+    50% {
+        color: red;
+    }
+
+    100% {
+        color: white
+    }
+}
+
+.game-container span#space {
+    background-color: goldenrod;
+}
+
+
+main button:hover {
     background: linear-gradient(to bottom right, rgb(255, 212, 103), #ffff21);
 }
-main button:active{
+
+main button:active {
     background: linear-gradient(to bottom right, rgb(255, 201, 66), #f7f77e);
 }
-main img{
+
+main img {
     width: 60%;
     margin-top: 1rem;
     justify-self: center;
     height: auto;
 }
-main > p{
+
+main>p {
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 4.5;
@@ -148,7 +160,8 @@ main > p{
     word-spacing: 0.16;
     color: blueviolet;
 }
-body #you-lose{
+
+body #you-lose {
     grid-template-columns: auto;
     grid-template-rows: auto;
     justify-content: center;
@@ -159,11 +172,12 @@ body #you-lose{
     grid-area: 1 / 1 / 4 / 4;
     height: 45rem;
     color: red;
-    background-color: "d3d3d373";
 }
-p + p{
+
+p+p {
     margin-top: 2rem;
 }
+
 footer {
     grid-area: 3 / 2 / 4 / 4;
 }

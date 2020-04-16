@@ -21,7 +21,7 @@ class App {
         this.okay = amountSec.querySelector("#okay");
         this.rowSec = amountSec.querySelector("#row-by-column");
         this.selectedRows = Number(this.rowSec.options[this.rowSec.selectedIndex].value);
-        this.numberMax = this.selectedRows ** 2 - 1;
+        this.numberMax = (this.selectedRows ** 2) - 1;
 
         let mySet = this.randomMize(this.selectedRows);
         let tempVal = "";
@@ -71,7 +71,7 @@ class App {
         const stylesheet = document.styleSheets[0];
 
         document.onkeydown = (event) => {
-            if (gameSec.children[this.numberMax + 1] != null && gameSec.children[this.numberMax].hasAttribute("title") === false && event.keyCode === 37) {
+            if (gameSec.children[this.numberMax + 1] != null && ((this.numberMax + this.selectedRows + 1 % this.selectedRows != 0) || (this.numberMax % this.selectedRows == 0)) && event.keyCode === 37) {
 
                 gameSec.children[this.numberMax].removeAttribute("id");
                 this.numberMax++;
@@ -90,7 +90,7 @@ class App {
 
                 gameSec.children[this.numberMax].textContent = '';
                 gameSec.children[this.numberMax].setAttribute("id", "space");
-            } else if (gameSec.children[this.numberMax - 1] != null && gameSec.children[this.numberMax - 1].hasAttribute("title") === false && event.keyCode === 39) {
+            } else if (gameSec.children[this.numberMax - 1] != null && ((this.numberMax + this.selectedRows + 1 % this.selectedRows != 0) || (this.numberMax % this.selectedRows == 0)) && event.keyCode === 39) {
                 gameSec.children[this.numberMax].removeAttribute("id");
                 this.numberMax -= 1;
 
