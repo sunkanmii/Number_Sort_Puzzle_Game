@@ -176,10 +176,11 @@ class App {
         const timerSec = document.querySelector("#time-left #time-sec");
         const youLose = document.querySelector("#you-lose");
 
-        timer.textContent = --timerMin;
-        
+        timer.textContent = timerMin;
+        --timerMin;
         let timerInterval = window.setInterval(
             function(){
+                timer.textContent = timerMin;
                 if(sec == 0){
                     if(timerMin == 0){
                         youLose.style.backgroundColor = "d3d3d373";
