@@ -8,6 +8,13 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <body>
+<section style="display: none" id="you-lose">
+    <p>Game over!
+
+        You lose :(
+    </p>
+    
+    </section>
     <main>
         <button><a href="index.html">Back</a></button>
         <section id="amount" style="display: grid">
@@ -22,6 +29,7 @@
         </section>
 
         <article id="mainGame" style="display:none">
+            <p id="time-left">Time left: <span id="time-min">00</span>:<span id="time-sec">00</span></p>
             <section class="game-container" style="display: none">
 
             </section>

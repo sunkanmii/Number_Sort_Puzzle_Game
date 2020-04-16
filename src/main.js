@@ -11,6 +11,7 @@ class App {
         this.numberMax = this.selectedRows ** 2;
         this.gameStartSec = document.querySelector(".game-container");
         this.clickButtonSound = document.querySelector("main audio");
+        this.timeLeftMin = 0;
     }
 
     generateSpans() {
@@ -44,17 +45,22 @@ class App {
         switch (this.selectedRows) {
             case 4:
                 this.gameStartSec.style.gridTemplateColumns = "4rem 4rem 4rem 4rem";
+                this.timeLeftMin = 5;
                 break;
             case 5:
                 this.gameStartSec.style.gridTemplateColumns = "4rem 4rem 4rem 4rem 4rem";
+                this.timeLeftMin = 7;
                 break;
             case 6:
                 this.gameStartSec.style.gridTemplateColumns = "4rem 4rem 4rem 4rem 4rem 4rem";
+                this.timeLeftMin = 9;
                 break;
             case 7:
                 this.gameStartSec.style.gridTemplateColumns = "4rem 4rem 4rem 4rem 4rem 4rem 4rem";
+                this.timeLeftMin = 11;
                 break;
         }
+        start.endAndStartTimer();
     }
 
     keyPress() {
@@ -147,19 +153,52 @@ class App {
             } else {
                 newSet.add(newVal);
             }
-
+            
             if (newSet.size === val - 1) {
                 i = 0;
                 break;
             }
         }
-
+        
         return newSet;
     }
-
+    
     playClickSound(){
         
     }
+
+    endAndStartTimer() {
+        let sec = 60;
+        let timerMin = this.timeLeftMin;
+
+        //var millisecBeforeRedirect = 10000; 
+        const timer = document.querySelector("#time-left #time-min");
+        const timerSec = document.querySelector("#time-left #time-sec");
+        const youLose = document.querySelector("#you-lose");
+
+        timer.textContent = --timerMin;
+        
+        let timerInterval = window.setInterval(
+            function(){
+                if(sec == 0){
+                    if(timerMin == 0){
+                        youLose.style.backgroundColor = "d3d3d373";
+                        youLose.style.display = "grid";
+                        window.clearInterval(timerInterval);
+                        console.log("You lose");
+                    }
+                    else{
+                        timerMin--;
+                        timer.textContent = timerMin;
+                        sec = 60;
+                    }
+                }
+                else{
+                    sec--;
+                    timerSec.textContent = sec;
+                }
+            },1000);
+        }
 }
 
 const start = new App();
