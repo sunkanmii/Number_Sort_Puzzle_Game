@@ -11,6 +11,7 @@ class App {
         this.numberMax = this.selectedRows ** 2;
         this.gameStartSec = document.querySelector(".game-container");
         this.clickButtonSound = document.querySelector("main audio");
+        this.allButtons = document.querySelectorAll("main button");
         this.timeLeftMin = 0;
     }
 
@@ -34,7 +35,7 @@ class App {
             span.appendChild(tempVal);
             this.gameStartSec.appendChild(span);
         })
-        
+
         span = document.createElement("span");
         tempVal = "";
         span.setAttribute("id", "space");
@@ -61,6 +62,7 @@ class App {
                 break;
         }
         start.endAndStartTimer();
+        start.iterateProp();
     }
 
     keyPress() {
@@ -69,9 +71,11 @@ class App {
         const pos = 4;
         let temp = 0;
         const stylesheet = document.styleSheets[0];
+        let evenNoEncounteredL = false;
+        let evenNoEncounteredR = false;
 
         document.onkeydown = (event) => {
-            if (gameSec.children[this.numberMax + 1] != null && ((this.numberMax + this.selectedRows + 1 % this.selectedRows != 0) || (this.numberMax % this.selectedRows == 0)) && event.keyCode === 37) {
+            if (gameSec.children[this.numberMax + 1] != null && gameSec.children[this.numberMax + 1].classList.contains("stopTag") === false && event.keyCode === 37) {
 
                 gameSec.children[this.numberMax].removeAttribute("id");
                 this.numberMax++;
@@ -90,7 +94,8 @@ class App {
 
                 gameSec.children[this.numberMax].textContent = '';
                 gameSec.children[this.numberMax].setAttribute("id", "space");
-            } else if (gameSec.children[this.numberMax - 1] != null && ((this.numberMax + this.selectedRows + 1 % this.selectedRows != 0) || (this.numberMax % this.selectedRows == 0)) && event.keyCode === 39) {
+            } else if (gameSec.children[this.numberMax - 1] != null && gameSec.children[this.numberMax].classList.contains("stopTag") === false && event.keyCode === 39) {
+
                 gameSec.children[this.numberMax].removeAttribute("id");
                 this.numberMax -= 1;
 
@@ -117,8 +122,12 @@ class App {
     iterateProp() {
         const gameSecChildren = document.querySelector(".game-container").children;
 
-        for (let i = 3; i < gameSecChildren.length; i += 4) {
+        for (let i = (this.selectedRows - 1); i < gameSecChildren.length; i += this.selectedRows) {
             gameSecChildren[i].setAttribute("title", "");
+        }
+
+        for (let i = 0; i < gameSecChildren.length; i += this.selectedRows) {
+            gameSecChildren[i].classList.add("stopTag");
         }
     }
 
@@ -153,18 +162,22 @@ class App {
             } else {
                 newSet.add(newVal);
             }
-            
+
             if (newSet.size === val - 1) {
                 i = 0;
                 break;
             }
         }
-        
+
         return newSet;
     }
-    
-    playClickSound(){
-        
+
+    playClickSound() {
+        for(let i = 0; i < this.allButtons.length; i++){
+            this.allButtons[i].addEventListener("click", () => {
+                this.clickButtonSound.play();
+            })
+        }
     }
 
     endAndStartTimer() {
@@ -179,32 +192,30 @@ class App {
         timer.textContent = timerMin;
         --timerMin;
         let timerInterval = window.setInterval(
-            function(){
+            function () {
                 timer.textContent = timerMin;
-                if(sec == 0){
-                    if(timerMin == 0){
+                if (sec == 0) {
+                    if (timerMin == 0) {
                         youLose.style.backgroundColor = "d3d3d373";
                         youLose.style.display = "grid";
                         window.clearInterval(timerInterval);
                         console.log("You lose");
-                    }
-                    else{
+                    } else {
                         timerMin--;
                         timer.textContent = timerMin;
                         sec = 60;
                     }
-                }
-                else{
+                } else {
                     sec--;
                     timerSec.textContent = sec;
                 }
-            },1000);
-        }
+            }, 1000);
+    }
 }
 
 const start = new App();
-start.iterateProp();
 start.keyPress();
+start.playClickSound();
 const body = document.querySelector("body");
 
 // window.addEventListener("load", () => {

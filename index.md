@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Number Puzzle</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/src/home.css'>
+</head>
+<body>
+    <header>
+        <p id="logo">Number Sort</p>
+    </header>
+
+    <main>
+        <section class="main-sec">
+            <button id ="new-game">
+                <a href="/src/game.html">
+                New game
+                </a>
+            </button>
+            <button>
+                <a href="">
+                Exit
+            </a>
+            </button>
+        </section>
+
+        <audio autoplay loop>
+            <source src="/music/music_orlamusic_Happy+002.mp3" type="audio/mpeg"></source>
+            Your browser does not support audio.
+        </audio>
+        <audio id="buttonClickSound" preload="auto">
+            <source src="/music/multimedia_button_click_010.mp3" type="audio/mpeg">
+        </audio>
+    </main>
+
+    <footer>
+        Copyright &copy; Fafowora Olasunkanmi. 
+        Front-End Web Developer / Aspiring Software Engineer
+    </footer>
+    <script src='/src/index.js'></script>
+</body>
+</html>
