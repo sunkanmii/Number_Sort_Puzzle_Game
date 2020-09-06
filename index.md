@@ -15,7 +15,7 @@
     <main>
         <section class="main-sec">
             <button id ="new-game">
-                <a href="/src/game.html">
+                <a href="./src/game.html">
                 New game
                 </a>
             </button>
@@ -27,11 +27,11 @@
         </section>
 
         <audio autoplay loop>
-            <source src="/music/music_orlamusic_Happy+002.mp3" type="audio/mpeg"></source>
+            <source src="./music/music_orlamusic_Happy+002.mp3" type="audio/mpeg"></source>
             Your browser does not support audio.
         </audio>
         <audio id="buttonClickSound" preload="auto">
-            <source src="/music/multimedia_button_click_010.mp3" type="audio/mpeg">
+            <source src="./music/multimedia_button_click_010.mp3" type="audio/mpeg">
         </audio>
     </main>
 
@@ -39,6 +39,6 @@
         Copyright &copy; Fafowora Olasunkanmi. 
         Front-End Web Developer / Aspiring Software Engineer
     </footer>
-    <script src='/src/index.js'></script>
+    <script src='./src/index.js'></script>
 </body>
 </html>
