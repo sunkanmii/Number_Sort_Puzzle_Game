@@ -5,7 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Number Puzzle</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='/src/home.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./src/home.css'>
 </head>
 <body>
     <header>
